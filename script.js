@@ -10,27 +10,74 @@ const splitTypes = document.querySelectorAll('.text-reveal')
             gsap.from(text.chars,{
                 scrollTrigger: {
                     trigger:char,
-                    start:"top 80%",
-                    end:'top 20%',
+                    start:"40% 40%",
+                    end:'130% 40%',
                     scrub: true,
                     markers: true
                 },
-                opacity: 0.2,
+                opacity: 0.4,
+                stagger: 0.1
+            })
+
+        })
+
+        var tl = gsap.timeline({scrollTrigger:{
+            trigger:".item",
+            start:"50% 50%",
+            end:"100% 50%",
+            scrub:true,
+            pin:true,
+            markers:{
+                startColor:"purple",
+                endColor:"fuchsia",
+            }
+        }});
+
+
+const splitTypes2 = document.querySelectorAll('.text-reveal2')
+
+        splitTypes2.forEach((char,i) => {
+
+            const text = new SplitType(char, { types:'chars,words'})
+        
+
+            gsap.from(text.chars,{
+                scrollTrigger: {
+                    trigger:char,
+                    start:"40% 40%",
+                    end:'130% 40%',
+                    scrub: true,
+                    markers: true
+                },
+                opacity: 0.4,
                 stagger: 0.1
             })
 
         })
 
 
-// const lenis = new Lenis()
+        var tl = gsap.timeline({scrollTrigger:{
+            trigger:".item2",
+            start:"50% 50%",
+            end:"100% 50%",
+            scrub:true,
+            pin:true,
+            markers:{
+                startColor:"yellow",
+                endColor:"black",
+            }
+        }})
 
-//         lenis.on('scroll', (e) => {
-//         console.log(e)
-//         })
 
-//         function raf(time) {
-//         lenis.raf(time)
-//         requestAnimationFrame(raf)
-//         }
+const lenis = new Lenis()
 
-//         requestAnimationFrame(raf)
+        lenis.on('scroll', (e) => {
+        console.log(e)
+        })
+
+        function raf(time) {
+        lenis.raf(time)
+        requestAnimationFrame(raf)
+        }
+
+        requestAnimationFrame(raf)
