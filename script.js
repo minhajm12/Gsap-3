@@ -11,12 +11,17 @@ const splitTypes = document.querySelectorAll('.text-reveal')
                 scrollTrigger: {
                     trigger:char,
                     start:"40% 40%",
-                    end:'130% 40%',
+                    end:'+=800%',
+
                     scrub: true,
                     markers: true
                 },
-                opacity: 0.4,
-                stagger: 0.1
+                opacity: 0,
+                stagger: .1,
+                // y:"-30px",
+                x:"20px",
+                rotate:"20deg",
+                scale:"0"
             })
 
         })
@@ -24,7 +29,8 @@ const splitTypes = document.querySelectorAll('.text-reveal')
         var tl = gsap.timeline({scrollTrigger:{
             trigger:".item",
             start:"50% 50%",
-            end:"100% 50%",
+            end:'+=800%',
+
             scrub:true,
             pin:true,
             markers:{
@@ -45,12 +51,15 @@ const splitTypes2 = document.querySelectorAll('.text-reveal2')
                 scrollTrigger: {
                     trigger:char,
                     start:"40% 40%",
-                    end:'130% 40%',
+                    end:'+=400%',
                     scrub: true,
                     markers: true
                 },
-                opacity: 0.4,
-                stagger: 0.1
+                opacity: 0,
+                stagger: .1,
+                y:"30px",
+                x:"40px",
+                rotate:"50deg"
             })
 
         })
@@ -59,7 +68,7 @@ const splitTypes2 = document.querySelectorAll('.text-reveal2')
         var tl = gsap.timeline({scrollTrigger:{
             trigger:".item2",
             start:"50% 50%",
-            end:"100% 50%",
+            end:'+=400%',
             scrub:true,
             pin:true,
             markers:{
